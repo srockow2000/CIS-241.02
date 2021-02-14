@@ -184,7 +184,7 @@ sort | uniq - c
 stat whoami.txt
 ```
 
-***ssh*** a program to log into a remote machine
+**ssh** a program to log into a remote machine
 ```
 #Example: go to address at 192.168.216.32
 ssh 192.168.216.32

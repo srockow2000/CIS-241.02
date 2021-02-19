@@ -1,5 +1,6 @@
 # CIS-241.02
 
+<<<<<<< HEAD
 Sarah Rockow
 
 "Fantasy is escapist, and that is its glory.
@@ -12,3 +13,9 @@ then it's our plain duty to escape, and to take as many people with us as we can
 
 
 https://github.com/srockow2000/CIS-241.02.git
+=======
+
+Hi
+
+
+>>>>>>> 5beca6a0727e975fe5c4b15bc0db97641b97e2a4

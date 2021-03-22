@@ -1,0 +1,45 @@
+#1: Replace words in the american-english dictionary
+Command: sed -e 's/color/colour/g; s/honor/honour/g; s/behavior/behaviour/g; s/humor/humour/g' /usr/share/dict/american-english > new_dict
+
+#2: IOCCC Message
+Command: sed -e 's/FOOPS/if/g; s/BEEPBOOP\//**/g' /home/woodriir/241/prog.c | sed -e '' > MyFile.c
+
+#3: Remove javascript tags
+Command: sed -e '/<script/, /><\/script>/d' faculty > faculty.index
+
+#4: Cleaning up limits
+Command: sed -n '/^#  define/p' /usr/include/limits.h | sed -n 's/#  define//gp' > clean_limits.h
+
+#5: Gattaca enthusiasiam
+Command: sed -i_Orig 's/gattaca/@@GREATMOVIE@@/g' dna.txt
+
+#6 Hex Text
+Command: sed -f sed_swap.txt /home/woodriir/241/file > decoded
+
+#7 Lyrics
+Command: sed -n '50!;G;h;$p' /home/woodriir/241/lyrics > ending	_lyrics
+
+#8: Bash script
+#!/usr/bin/bash
+
+lscpu | sed -n '5p'
+echo =======
+
+echo
+echo "Memory:"
+echo =======
+echo
+
+free -h | sed -n '1p'
+free -h | sed -n 's/Gi/ Gigabytes/g; /Mem:/p'
+
+echo
+echo "Disks:"
+echo "======="
+echo
+df -h | sed -n '/T/p'
+
+echo
+echo "Date:"
+echo "===="
+date +'%A %d %B %Y. %X%Z' | sed -e 's/y/y,/; s/PM/ p.m. /; s/EST/ Eastern Standard/'

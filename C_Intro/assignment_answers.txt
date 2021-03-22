@@ -1,0 +1,3 @@
+During the first two compilations and timestamp checks with the circle libraries, all of the time stamps changed because the files were being compiled.
+
+After adding the new rectangle libraries, the circleLib.o library did not change because nothing inside of that file was changed. The newLib libraries were changed as well as main.o and a.out.

@@ -1,0 +1,19 @@
+s/0a/\/n/g;
+s/41/A/g ;
+s/45/E/g ;
+s/49/I/g ;
+s/50/P/g ;
+s/4F/O/g ;
+s/55/U/g ;
+s/4E/N/g ;
+s/52/R/g ;
+s/53/S/g ;
+s/54/T/g ;
+s/61/a/g ;
+s/65/e/g ;
+s/69/i/g ;
+s/6F/o/g ;
+s/6E/n/g ;
+s/72/r/g ;
+s/73/s/g ;
+s/74/t/g

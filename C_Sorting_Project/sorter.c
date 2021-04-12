@@ -13,7 +13,8 @@
  */
 
 
-/* A method to sort a file containing a list of words
+/* A method to sort a file containing a list of words 
+ * with each word separated by a new line.
  *
  * @param contents	a file address
  * @param size		the number of lines (i.e. words) in the file
@@ -43,14 +44,14 @@ void sort(char** contents, int size) {
 	 * task 4.2: return the sorted array and free the memory
 	 */
 
-	//array to hold words; essentially a temp variable
+	//Task 1.1: array to hold array of words; essentially a temp variable
 	char** sorted = malloc(size * sizeof(char*));
 
-	//array to hold letters
+	//Task 1.2: array to hold letters; array ends when new line is found
 	char* words = strtok(*contents, "\n");
 
 	
-	//fill sorted array using words array
+	//Task 2: fill sorted array using words array
 	int i = 0;
 
 	
@@ -59,11 +60,12 @@ void sort(char** contents, int size) {
 		i++;
 
 		//reset while loop
-		words = strtok(NULL, "\n");
+	//	words = strtok(NULL, "\n");
 	}
 
 
-	//insertion sort from 'https://www.geeksforgeeks.org/insertion-sort/'
+	//Task 3: insertion sort from 
+	//'https://www.geeksforgeeks.org/insertion-sort/'
 	int j, k = 0;
 	char* temp;
 	
@@ -73,6 +75,9 @@ void sort(char** contents, int size) {
 
 		/* elements that are greater than temp get moved 
 		 * one position ahead of current position
+		 *
+		 * comparison is made using addresses
+		 * uses ASCII rules; so 'Zebra' could come before 'ant'
 		 */
 		
 		while (k >= 0 && sorted[k] > temp) {
@@ -96,6 +101,6 @@ void sort(char** contents, int size) {
 	//make *contents point to the sorted array
 	*contents = arr;
 	
-	//unmalloc
+	//free up the memory from the array (i.e. unmalloc)
 	free(sorted);
 }

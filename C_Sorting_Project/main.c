@@ -32,23 +32,21 @@ int main(int argc, char** argv){
 	//find the size (i.e. number of words) for the sort function
 	int lines = 0;
 	for (int i = 0; i < tot_bytes; i++) {
-		if (contents[i] == '\n'){
+		if (contents[i] == '\n')
 			lines++;
-		}
 	}
 	//content[i] holds individual letters
 
-	printf("\nThere are %d words in the file.\n", lines);
-	printf("\n%s has %lu bytes.\n", argv[1], tot_bytes);
+//	printf("\nThere are %d words in the file.\n", lines);
+//	printf("%s has %lu bytes.\n", argv[1], tot_bytes);
 
-	sort(&contents, lines);
+//	sort(&contents, lines);
 	// Write out the new file.
 	size_t sorted_size = save_file(argv[2], contents, tot_bytes);
 	
 		
-	printf("\n%s has %lu bytes.\n", argv[2], tot_bytes);
+//	printf("%s has %lu bytes.\n", argv[2], tot_bytes);
 	
-	//default
 	return 0;
 }
 

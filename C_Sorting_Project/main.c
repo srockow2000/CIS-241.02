@@ -27,8 +27,6 @@ int main(int argc, char** argv){
 	char* contents;
 	size_t tot_bytes = load_file(argv[1], &contents);
 
-	printf("The file you opened, %s, has %lu bytes.\n", argv[1], tot_bytes);
-
 	// Sort the file with the function you wrote.
 
 	//find the size (i.e. number of words) for the sort function
@@ -40,12 +38,14 @@ int main(int argc, char** argv){
 	}
 	//content[i] holds individual letters
 
-	printf("There are %d words in the file.\n", lines);
-	sort(&contents, lines);	
+	printf("\nThere are %d words in the file.\n", lines);
+	printf("\n%s has %lu bytes.\n", argv[1], tot_bytes);
 
+	sort(&contents, lines);
 	// Write out the new file.
 	size_t sorted_size = save_file(argv[2], contents, tot_bytes);
 	
+		
 	printf("\n%s has %lu bytes.\n", argv[2], tot_bytes);
 	
 	//default

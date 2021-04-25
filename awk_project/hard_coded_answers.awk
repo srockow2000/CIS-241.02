@@ -1,6 +1,6 @@
 BEGIN {
 	FS = ","
-	pokemon = 721
+	pokemon = 733
 	max_points = 0
 }
 

@@ -31,10 +31,10 @@ void easyPeasy(int* x){
  */
 void one(Student* a){
 	//I feel like I'm missing a joke here . . .
-	set_first_name(a, "Jigglypuff");
-	set_last_name(a, "Ketchum");
-	set_g_number(a, 10);
-	set_gpa(a, 1.16);
+	a -> first_name = "Jigglypuff";
+	a -> last_name = "Ketchum";
+	a -> g_number = 10;
+	a -> gpa = 1.16;
 }
 
 /**
@@ -75,16 +75,12 @@ void three(Student a, Student* b){
 
 Student four(){
 	Student* z = (Student*)malloc(sizeof(Student));	
-/*	z -> first_name = "T. Yoshisaur";
+
+	z -> first_name = "T. Yoshisaur";
 	z -> last_name = "Munchakoopas";
 	z -> g_number = 1990; //wow!
 	z -> gpa = 3.1;
-*/	
-	set_first_name(z, "T. Yoshisaur");
-	set_last_name(z, "Munchakoopas");
-	set_g_number(z, 1990);
-	set_gpa(z, 3.1);
-	set_roommate(z, &Mario);
+	z -> roommate = &Mario;
 
 	return *z;
 }
@@ -102,11 +98,10 @@ Student* five(){
 	//Test Case for ThreeTest
 	Student* anon = (Student*)malloc(sizeof(Student));
 
-	
-	set_first_name(anon, "Luigi");
-	set_last_name(anon, "Mario");
-	set_g_number(anon, 2);
-	set_gpa(anon, 3.54);
+	anon -> first_name = "Luigi";
+	anon -> last_name = "Mario";
+	anon -> g_number = 2;
+	anon -> gpa = 3.54;
 	
 	return anon;
 }
@@ -145,20 +140,22 @@ Student* six(){
  * 3.54    (gpa [we know he's the smart one])
  */
 void seven(Student** students){
-	students = (Student**)malloc(10 * sizeof(Student*));
+	//students is an array of students that have 
+	//an information array inside each entry
+	students = (Student**) malloc(10 * sizeof(Student*));
+	
+	Student* s = (Student*)malloc(sizeof(Student));
+
+	s -> first_name = "Luigi";
+	s -> last_name = "Mario";
+	s -> g_number = 2;
+	s -> gpa = 3.54;
+
 
 	//testing 4th student in main.c
+	students[3] = s;
 	
-	students[3] -> first_name = "Luigi";
-	students[3] -> last_name = "Mario";
-	students[3] -> g_number = 2;
-	students[3] -> gpa = 3.54;
-	/*
-	set_first_name(students[3], "Luigi");
-	set_last_name(students[3], "Mario");
-	set_g_number(students[3], 2);
-	set_gpa(students[3], 3.54);
-	*/
+	free(s);
 }
 
 /**

@@ -74,15 +74,15 @@ void three(Student a, Student* b){
  */
 
 Student four(){
-	Student* z = (Student*)malloc(sizeof(Student));	
+	Student z = (Student)malloc(sizeof(Student));	
 
-	z -> first_name = "T. Yoshisaur";
-	z -> last_name = "Munchakoopas";
-	z -> g_number = 1990; //wow!
-	z -> gpa = 3.1;
-	z -> roommate = &Mario;
+	set_first_name(&z, "T. Yoshisaur");
+	set_last_name(&z, "Munchakoopas");
+	set_g_number(&z, 1990);
+	set_gpa(&z, 3.1);
+	set_roommate(&z, &Mario);
 
-	return *z;
+	return z;
 }
 
 /**

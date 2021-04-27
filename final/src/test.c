@@ -18,9 +18,9 @@ int example(){
 void easyPeasy(int* x){
 	/* basic squaring logic,
 	 * but with POINTERS!!!
-	 * ->->->->->->->->->->
-	*/
-	
+	 * -> -> -> -> -> -> ->
+	 */
+
 	*x *= *x;
 }
 
@@ -30,25 +30,24 @@ void easyPeasy(int* x){
  * Set the g number to 10, the gpa to 1.16.
  */
 void one(Student* a){
-	//I feel like I'm missing a joke here . . .
 	a -> first_name = "Jigglypuff";
 	a -> last_name = "Ketchum";
 	a -> g_number = 10;
 	a -> gpa = 1.16;
 }
 
+
 /**
  * Copy the information from Student b to Student a.
  * (pointer parameters).
  */
 void two(Student* a, Student* b){
-	
 	a -> first_name = b -> first_name;
 	a -> last_name = b -> last_name;
 	a -> g_number = b -> g_number;
 	a -> gpa = b -> gpa;
-
 }
+
 
 /**
  * Copy the information from Student a to Student b.
@@ -56,7 +55,6 @@ void two(Student* a, Student* b){
  */
 
 void three(Student a, Student* b){
-
 	b -> first_name = a.first_name;
 	b -> last_name = a.last_name;
 	b -> g_number = a.g_number;
@@ -72,9 +70,8 @@ void three(Student a, Student* b){
  * Mario	  (roommate [defined above])
  * Remember: C is pass by copy ONLY.
  */
-
 Student four(){
-	Student z = (Student)malloc(sizeof(Student));	
+	Student z;
 
 	set_first_name(&z, "T. Yoshisaur");
 	set_last_name(&z, "Munchakoopas");
@@ -94,16 +91,14 @@ Student four(){
  * Remember: C is pass by copy ONLY.
  */
 Student* five(){
-	//at this point, I'm just referencing the test cases
-	//Test Case for ThreeTest
-	Student* anon = (Student*)malloc(sizeof(Student));
+	Student* a = (Student*)malloc(sizeof(Student));
 
-	anon -> first_name = "Luigi";
-	anon -> last_name = "Mario";
-	anon -> g_number = 2;
-	anon -> gpa = 3.54;
-	
-	return anon;
+	a -> first_name = "Luigi";
+	a -> last_name = "Mario";
+	a -> g_number = 2;
+	a -> gpa = 3.54;
+
+	return a;
 }
 
 /**
@@ -140,23 +135,19 @@ Student* six(){
  * 3.54    (gpa [we know he's the smart one])
  */
 void seven(Student** students){
-	//students is an array of students that have 
-	//an information array inside each entry
-	students = (Student**) malloc(10 * sizeof(Student*));
-	
+	*students = (Student*)malloc(10 * sizeof(Student));
+
 	Student* s = (Student*)malloc(sizeof(Student));
 
-	s -> first_name = "Luigi";
-	s -> last_name = "Mario";
-	s -> g_number = 2;
-	s -> gpa = 3.54;
+	set_first_name(s, "Luigi");
+	set_last_name(s, "Mario");
+	set_g_number(s, 2);
+	set_gpa(s, 3.54);
 
-
-	//testing 4th student in main.c
-	students[3] = s;
-	
-	free(s);
+	//testing the 4th student in main.c
+	(*students)[3] = *s;
 }
+
 
 /**
  * Given a, b, and c calculate the first solution for
@@ -165,7 +156,8 @@ void seven(Student** students){
  * -b + sqrt(b^2 - 4ac) / (2a)
  */
 double quadratic(double a, double b, double c){
-	//no error checking (e.g. negative numbers)
+	//no error checking (e.g. negative numbers
+	
 	double discriminant = 0.0;
 
 	discriminant = (b * b) - (4 * a * c);
@@ -173,6 +165,7 @@ double quadratic(double a, double b, double c){
 
 	return ((-b + discriminant) / (2 * a));
 }
+
 
 /**
  * Given a "string" (a character array) and a length,
